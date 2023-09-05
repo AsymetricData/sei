@@ -1,5 +1,5 @@
 <p style="align:center">
-![Sei logo](logo.png)
+<img src="logo.png" />
 </p>
 # Sei 🐳
 
