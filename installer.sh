@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -sSfo "https://raw.githubusercontent.com/AsymetricData/sei/master/bin/sei"
+curl -sSfO "https://raw.githubusercontent.com/AsymetricData/sei/master/bin/sei"
 
 # Make the downloaded scripts executable
 chmod +x "bin/sei"
