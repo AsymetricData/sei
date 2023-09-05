@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#Define the image to run
+SEI_OS="alpine"
+SEI_OS_VERSION="v3.18"
+
+SEI_ENGINE="swoole"
+SEI_ENGINE_VERSION="v5.0.3"
+
+DOCKER_IMAGE="hyperf/hyperf:8.2-${SEI_OS}-${SEI_OS_VERSION}-${SEI_ENGINE}-${SEI_ENGINE_VERSION}"
+
+DOCKER_CONTAINER_NAME="sei-${SEI_OS}-${SEI_OS_VERSION}-${SEI_ENGINE}-${SEI_ENGINE_VERSION}"
+# Check if an argument was provided
+if [ $# -eq 0 ]; then
+  ARGS="$@"
+
+elif [ "$1" == "update" ]; then
+  ./sei-update
+elif [ "$1" == "run" ]; then
+    echo "Running the Docker container: $DOCKER_IMAGE"
+    docker run --rm -it -v .:/data/project -p 9501:9501 --entrypoint /bin/sh --workdir /data/project --name "$DOCKER_CONTAINER_NAME" "$DOCKER_IMAGE"
+elif [ "$1" == "serve" ]; then
+    echo "Serving the Docker container: $DOCKER_IMAGE"
+    docker run --rm  -v .:/data/project -p 9501:9501 -it --entrypoint /usr/bin/php --workdir /data/project --name "$DOCKER_CONTAINER_NAME" "$DOCKER_IMAGE" bin/hyperf.php start
+elif [ "$1" == "stop" ]; then
+  echo "Stopping the Docker container: $DOCKER_CONTAINER_NAME"
+  docker stop "$DOCKER_CONTAINER_NAME"
+else
+    echo "Executing command in the running Docker container: $@"
+    docker exec "$DOCKER_CONTAINER_NAME" "$@"
+fi
