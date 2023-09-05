@@ -1,9 +1,10 @@
 #!/bin/bash
 
-curl -sSfO https://raw.githubusercontent.com/AsymetricData/sei/master/bin/sei
+mkdir -p bin
+curl -sSf https://raw.githubusercontent.com/AsymetricData/sei/master/bin/sei -o bin/sei
 
 # Make the downloaded scripts executable
-chmod +x "bin/sei"
+chmod +x bin/sei
 
 add_alias_if_not_exists() {
   local alias_line="$1"
