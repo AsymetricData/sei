@@ -93,7 +93,7 @@ Don't forget to source your profile or restart your shell session to apply the c
 
 ## Contributing
 
-If you'd like to contribute to Sei, feel free to open a [pull request](https://github.com/your-username/sei/pulls) or submit [issues](https://github.com/your-username/sei/issues) for any bugs or feature requests.
+If you'd like to contribute to Sei, feel free to open a [pull request](https://github.com/AsymetricData/sei/pulls) or submit [issues](https://github.com/AsymetricData/sei/issues) for any bugs or feature requests.
 
 ## License
 
