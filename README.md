@@ -49,7 +49,7 @@ curl -sSf https://raw.githubusercontent.com/AsymetricData/sei/master/installer.s
 To run your Hyperf container, use the following command:
 
 ```bash
-./sei run
+./bin/sei run
 ```
 
 This command will create and start your Hyperf container using the specified Docker image.
@@ -59,7 +59,7 @@ This command will create and start your Hyperf container using the specified Doc
 To serve your Hyperf application, execute the following command:
 
 ```bash
-./sei serve
+./bin/sei serve
 ```
 
 Sei will configure and start your Hyperf container for serving your application.
@@ -69,7 +69,7 @@ Sei will configure and start your Hyperf container for serving your application.
 To stop a running Hyperf container, use the following command:
 
 ```bash
-./sei stop
+./bin/sei stop
 ```
 
 This will gracefully stop the specified Hyperf container.
@@ -79,7 +79,7 @@ This will gracefully stop the specified Hyperf container.
 You can also execute custom commands within your running Hyperf container. Simply use the following format:
 
 ```bash
-./sei your-custom-command arg1 arg2 ...
+./bin/sei your-custom-command arg1 arg2 ...
 ```
 
 ### Setting an Alias
