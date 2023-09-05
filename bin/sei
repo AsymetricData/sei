@@ -18,10 +18,10 @@ elif [ "$1" == "update" ]; then
   ./sei-update
 elif [ "$1" == "run" ]; then
     echo "Running the Docker container: $DOCKER_IMAGE"
-    docker run --rm -it -v .:/data/project -p 9501:9501 --entrypoint /bin/sh --workdir /data/project --name "$DOCKER_CONTAINER_NAME" "$DOCKER_IMAGE"
+    docker run --user "$(id -u):$(id -g)" --rm -it -v .:/data/project -p 9501:9501 --entrypoint /bin/sh --workdir /data/project --name "$DOCKER_CONTAINER_NAME" "$DOCKER_IMAGE"
 elif [ "$1" == "serve" ]; then
     echo "Serving the Docker container: $DOCKER_IMAGE"
-    docker run --rm  -v .:/data/project -p 9501:9501 -it --entrypoint /usr/bin/php --workdir /data/project --name "$DOCKER_CONTAINER_NAME" "$DOCKER_IMAGE" bin/hyperf.php start
+    docker run --user "$(id -u):$(id -g)" --rm  -v .:/data/project -p 9501:9501 -it --entrypoint /usr/bin/php --workdir /data/project --name "$DOCKER_CONTAINER_NAME" "$DOCKER_IMAGE" bin/hyperf.php start
 elif [ "$1" == "stop" ]; then
   echo "Stopping the Docker container: $DOCKER_CONTAINER_NAME"
   docker stop "$DOCKER_CONTAINER_NAME"

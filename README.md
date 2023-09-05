@@ -1,3 +1,4 @@
+(logo.svg)[Sei]
 # Sei 🐳
 
 Sei is a handy shell script designed to simplify the management of Docker containers for Hyperf-based applications. Named after the Docker whale mascot, Sei helps you quickly run, serve, and stop your Hyperf containers with ease.
