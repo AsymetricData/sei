@@ -29,7 +29,7 @@ cd sei/bin
 chmod +x sei
 ```
 
-Or
+Or to use it in your project
 
 1. Open your terminal.
 
@@ -38,9 +38,8 @@ Or
 3. Run the following command to download and execute the installer script:
 
 ```bash
-curl -sSf https://raw.githubusercontent.com/AsymetricData/sei/master/installer.sh | bash
+curl -s https://raw.githubusercontent.com/AsymetricData/sei/master/installer.sh | bash
 ```
-
 
 ## Usage
 
