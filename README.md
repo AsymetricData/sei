@@ -104,4 +104,3 @@ If you'd like to contribute to Sei, feel free to open a [pull request](https://g
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 Happy container management with Sei! 🐳
-```
